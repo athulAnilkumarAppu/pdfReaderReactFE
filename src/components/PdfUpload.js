@@ -50,6 +50,16 @@ const PdfUpload = () => {
     <div style={{ border: '1' }} >
         <div>{`First Price: ${pdfTextContent.firstPrice ? pdfTextContent.firstPrice : 'not found'}`}</div>
         <div>{`Second Price: ${pdfTextContent.secondPrice ? pdfTextContent.secondPrice : 'not found'}`}</div>
+        {pdfTextContent.thirdPrice ? 
+        <div>
+        <label>Third Price:</label>
+          <ul>
+          {pdfTextContent.thirdPrice?.length > 0 && pdfTextContent.thirdPrice.map((item, k)=> {
+            return <li key={k}>{item}</li>
+          })}
+          </ul>
+        </div>
+        : 'not found'}
       </div>}
      
     </>
