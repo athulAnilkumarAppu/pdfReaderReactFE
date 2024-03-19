@@ -17,6 +17,15 @@ const PdfUpload = () => {
     })  
   },[])
 
+
+  useEffect(()=> {
+    axios.post('http://localhost:3000/getLotteryResultsById', {id: 1},).then((response)=> {
+      console.log(response)
+    }).catch((error)=> {
+      console.log(error)
+    })  
+  },[])
+
   const handleFile = (event) => {
     const file = event.target.files?.[0];
 
