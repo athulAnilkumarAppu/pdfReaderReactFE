@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const PdfUpload = () => {
@@ -8,6 +8,14 @@ const PdfUpload = () => {
   const [pdfTextContent, setPdfContent] = useState('')
 
   const [loading, setLoading] = useState(false)
+
+  useEffect(()=> {
+    axios.post('https://pdfcontentreader-1.onrender.com/getLotteryResults', {},).then((response)=> {
+      console.log(response)
+    }).catch((error)=> {
+      console.log(error)
+    })  
+  },[])
 
   const handleFile = (event) => {
     const file = event.target.files?.[0];
@@ -61,6 +69,8 @@ const PdfUpload = () => {
         </div>
         : 'not found'}
       </div>}
+
+      
      
     </>
   );
