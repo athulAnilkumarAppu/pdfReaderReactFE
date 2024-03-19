@@ -19,7 +19,7 @@ const PdfUpload = () => {
 
 
   useEffect(()=> {
-    axios.post('http://localhost:3000/getLotteryResultsById', {id: 1},).then((response)=> {
+    axios.post('https://pdfcontentreader-1.onrender.com/getLotteryResultsById', {id: 1},).then((response)=> {
       console.log(response)
     }).catch((error)=> {
       console.log(error)
